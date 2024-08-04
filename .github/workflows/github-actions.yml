@@ -5,7 +5,7 @@ jobs:
     runs-on: windows-2019
     strategy:
       matrix:
-        node-version: [ 17.x ]
+        node-version: [ 16.x ]
 
     steps:
       - uses: actions/checkout@v2
@@ -26,6 +26,9 @@ jobs:
         if: always()
       - name: build storybook
         run: npm run sb:build
+        if: always()
+      - name: update loki
+        run: npm run test:ui:update
         if: always()
       - name: screenshot testing
         run: npm run test:ui:ci
