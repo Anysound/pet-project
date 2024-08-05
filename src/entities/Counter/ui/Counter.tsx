@@ -18,7 +18,7 @@ export const Counter = () => {
   return (
     <div>
       <h1 data-testid="counter">
-        {t('Счетчик')}
+        {t('Счетчикк')}
         :
         {' '}
         {counter}
