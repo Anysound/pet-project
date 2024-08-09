@@ -27,9 +27,6 @@ jobs:
       - name: build storybook
         run: npm run sb:build
         if: always()
-      - name: update loki
-        run: npm run test:ui:update:ci
-        if: always()
       - name: screenshot testing
         run: npm run test:ui:ci
         if: always()
