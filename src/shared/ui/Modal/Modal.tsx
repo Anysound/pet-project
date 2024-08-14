@@ -1,4 +1,6 @@
-import React, { ReactNode, useCallback, useEffect } from 'react';
+import React, {
+  ReactNode, useCallback, useEffect, useState,
+} from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Portal } from '../Portal/Portal';
 import styles from './Modal.module.scss';
@@ -8,16 +10,23 @@ interface ModalProps {
     children?: ReactNode;
     isOpen?: boolean;
     onClose?: () => void;
+    lazy?: boolean;
 }
 
 export const Modal = (props: ModalProps) => {
   const {
-    className, children, isOpen, onClose,
+    className, children, isOpen, onClose, lazy,
   } = props;
+
+  const [isMounted, setIsMounted] = useState(false);
 
   const mods: Record<string, boolean> = {
     [styles.opened]: isOpen,
   };
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, [isOpen]);
 
   const closeHandler = useCallback(() => {
     if (onClose) {
@@ -43,6 +52,11 @@ export const Modal = (props: ModalProps) => {
     };
   }, [isOpen, onKeyDown]);
 
+  if (lazy && !isMounted) {
+    console.log('notshowingModal');
+
+    return null;
+  }
   return (
     <Portal>
       <div className={classNames(styles.Modal, mods, [className])}>

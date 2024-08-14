@@ -7,7 +7,9 @@
   "Переключить": "toggle",
   "Страница не найдена": "Page not found",
   "Короткий язык": "En",
-  "Войти": "Login",
+  "Войти": "Log in",
+  "Логин": "Login",
+  "Пароль": "Password",
   "Счетчик": "Counter",
   "Counter": "Counter"
 }
