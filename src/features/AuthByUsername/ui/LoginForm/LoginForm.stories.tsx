@@ -2,6 +2,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 // import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
+import { StoreDecorator } from 'shared/config/storybook/store-decorator';
 import { ThemeDecorator } from 'shared/config/storybook/theme-decorator';
 import { LoginForm } from './LoginForm';
 
@@ -16,40 +17,29 @@ export default {
 const Template: ComponentStory<typeof LoginForm> = (args) => <LoginForm {...args} />;
 
 export const Primary = Template.bind({});
-Primary.args = {
-};
+Primary.args = {};
 
 export const OutlineDark = Template.bind({});
 OutlineDark.args = {
   children: 'Text',
 };
 
-export const BackgroundTheme = Template.bind({});
-BackgroundTheme.args = {
-  children: 'Text',
-};
-
-export const BackgroundInverted = Template.bind({});
-BackgroundInverted.args = {
-  children: 'Text',
-};
-
-export const Square = Template.bind({});
-Square.args = {
-  children: '<',
-  square: true,
-};
-
-export const SquareSizeL = Template.bind({});
-SquareSizeL.args = {
-  children: '<',
-};
-
-export const SquareSizeXL = Template.bind({});
-SquareSizeXL.args = {
-  children: '<',
-  square: true,
-
-};
-
 OutlineDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const WithError = Template.bind({});
+WithError.args = {};
+WithError.decorators = [StoreDecorator({
+  login: {
+    username: 'sdfasd',
+    password: '323',
+    error: 'error message',
+  },
+})];
+
+export const Loading = Template.bind({});
+Loading.args = {};
+Loading.decorators = [StoreDecorator({
+  login: {
+    isLoading: true,
+  },
+})];

@@ -91,7 +91,14 @@ SquareSizeXL.args = {
   theme: ButtonTheme.BACKGROUND_INVERTED,
   square: true,
   size: ButtonSize.XL,
+};
 
+export const DisabledBtn = Template.bind({});
+DisabledBtn.args = {
+  children: '<',
+  theme: ButtonTheme.OUTLINE,
+  square: true,
+  disabled: true,
 };
 
 OutlineDark.decorators = [ThemeDecorator(Theme.DARK)];

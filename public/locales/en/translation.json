@@ -8,8 +8,10 @@
   "Страница не найдена": "Page not found",
   "Короткий язык": "En",
   "Войти": "Log in",
+  "Выйти": "Log out",
   "Логин": "Login",
   "Пароль": "Password",
   "Счетчик": "Counter",
-  "Counter": "Counter"
+  "Форма авторизации": "Login form",
+  "Вы ввели неверный логин или пароль": "Uncorrect login or password"
 }

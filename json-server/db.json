@@ -48,7 +48,7 @@
     {
       "username": "admin",
       "password": "123",
-      "id": 10
+      "id": 1
     }
   ],
   "comments": [
@@ -76,6 +76,13 @@
       "id": 5,
       "body": "come-comment5",
       "postId": 5
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "123"
     }
   ],
   "profile": {
