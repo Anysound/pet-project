@@ -25,7 +25,9 @@ export const Modal = (props: ModalProps) => {
   };
 
   useEffect(() => {
-    setIsMounted(true);
+    if (isOpen) {
+      setIsMounted(true);
+    }
   }, [isOpen]);
 
   const closeHandler = useCallback(() => {
@@ -53,8 +55,6 @@ export const Modal = (props: ModalProps) => {
   }, [isOpen, onKeyDown]);
 
   if (lazy && !isMounted) {
-    console.log('notshowingModal');
-
     return null;
   }
   return (

@@ -3,12 +3,12 @@ import { loginByUsername } from '../services/loginByUsername';
 import { LoginSchema } from '../types/loginSchema';
 
 const initialState: LoginSchema = {
+  isLoading: false,
   username: '',
   password: '',
-  isLoading: false,
 };
 
-const userSlice = createSlice({
+export const loginSlice = createSlice({
   name: 'login',
   initialState,
   reducers: {
@@ -21,11 +21,11 @@ const userSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(loginByUsername.pending, (state, action) => {
+      .addCase(loginByUsername.pending, (state) => {
         state.error = undefined;
         state.isLoading = true;
       })
-      .addCase(loginByUsername.fulfilled, (state, action) => {
+      .addCase(loginByUsername.fulfilled, (state) => {
         state.isLoading = false;
       })
       .addCase(loginByUsername.rejected, (state, action) => {
@@ -35,17 +35,6 @@ const userSlice = createSlice({
   },
 });
 
-/*
-{
-    name: 'posts',
-    actions : {
-        createPost,
-        updatePost,
-        deletePost,
-    },
-    reducer
-}
-*/
-
-export const { actions: loginActions } = userSlice;
-export const { reducer: loginReducer } = userSlice;
+// Action creators are generated for each case reducer function
+export const { actions: loginActions } = loginSlice;
+export const { reducer: loginReducer } = loginSlice;
