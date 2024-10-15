@@ -1,0 +1,39 @@
+.link {
+  margin-left: 10px;
+  white-space: nowrap;
+}
+
+.item {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  margin-right: 10px;
+  fill: var(--inverted-primary-color);
+}
+
+.collapsed {
+  width: var(--sidebar-width-collapsed);
+
+  .textLink {
+    display: none;
+  }
+
+  .link {
+    opacity: 0;
+    transition: 0.3s opacity;
+    width: 0;
+  }
+
+  .switchers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .lang {
+    margin-left: 0;
+  }
+}

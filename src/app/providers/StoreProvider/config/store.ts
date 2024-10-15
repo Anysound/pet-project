@@ -27,3 +27,6 @@ export function createReduxStore(
 
   return store;
 }
+
+export type AppDispatch = ReturnType<typeof createReduxStore>['dispatch'] // ReturnType - utility-тип,
+// который в дженерик принимает тип функции

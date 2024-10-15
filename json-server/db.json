@@ -86,6 +86,13 @@
     }
   ],
   "profile": {
-    "name": "typicode"
+    "name": "anysound",
+    "lastName": "nurlan",
+    "age": "30",
+    "currency": "RUB",
+    "country": "Russia",
+    "city": "SaintP",
+    "username": "admin",
+    "avatar": "https://ru.pngtree.com/freebackground/male-avatar-image-in-the-circle_3377421.html"
   }
 }
