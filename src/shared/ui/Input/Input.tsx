@@ -1,5 +1,6 @@
 import React, {
-  InputHTMLAttributes, memo, useEffect, useRef, useState,
+  InputHTMLAttributes, memo,
+  RefObject, useEffect, useRef, useState,
 } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import styles from './Input.module.scss';
@@ -17,7 +18,7 @@ export const Input = memo(((props: InputProps) => {
     value, className, onChange, type = 'text', placeholder, autoFocus, ...otherProps
   } = props;
   const [isFocused, setIsFocused] = useState(false);
-  const [caretPosition, setCaretPosition] = useState(0);
+  const [caretPosition, setCaretPosition] = useState<number | null>(0);
 
   const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     onChange?.(e.target.value);
@@ -38,7 +39,7 @@ export const Input = memo(((props: InputProps) => {
     setCaretPosition(target.selectionStart);
   };
 
-  const ref = useRef<HTMLInputElement>();
+  const ref = useRef() as RefObject<HTMLInputElement>;
 
   useEffect(() => {
     if (autoFocus) {
@@ -63,7 +64,7 @@ export const Input = memo(((props: InputProps) => {
           className={styles.input}
           {...otherProps}
         />
-        {isFocused && <span className={styles.caret} style={{ left: `${caretPosition * 6}px` }} />}
+        {isFocused && <span className={styles.caret} style={{ left: `${caretPosition! * 6}px` }} />}
       </div>
     </div>
   );

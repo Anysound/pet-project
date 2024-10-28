@@ -1,7 +1,7 @@
 import React, {
   ReactNode, useCallback, useEffect, useState,
 } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import { Portal } from '../Portal/Portal';
 import styles from './Modal.module.scss';
 
@@ -20,7 +20,7 @@ export const Modal = (props: ModalProps) => {
 
   const [isMounted, setIsMounted] = useState(false);
 
-  const mods: Record<string, boolean> = {
+  const mods: Mods = {
     [styles.opened]: isOpen,
   };
 

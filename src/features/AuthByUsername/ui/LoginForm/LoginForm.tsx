@@ -1,6 +1,6 @@
 import { loginByUsername } from 'features/AuthByUsername/model/services/loginByUsername/loginByUsername';
 import { loginActions, loginReducer } from 'features/AuthByUsername/model/slice/loginSlice';
-import { memo, useCallback } from 'react';
+import { memo, ReactNode, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames/classNames';
@@ -18,6 +18,8 @@ import styles from './LoginForm.module.scss';
 export interface LoginFormProps {
 className?: string;
 onSuccess: () => void;
+// eslint-disable-next-line react/no-unused-prop-types
+children?: ReactNode
 }
 
 const initialReducers: ReducersList = {
