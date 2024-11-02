@@ -23,6 +23,7 @@ ThunkConfig<string>>(
       localStorage.setItem(USER_KEY, JSON.stringify(response.data));
       dispatch(userActions.setAuthData(response.data));
 
+      // eslint-disable-next-line no-unused-expressions
       extra.navigate && extra.navigate('/about');
       return response.data;
     } catch (e) {

@@ -110,6 +110,7 @@
     "looks-same": {
       "ignoreCaret": true
     },
+    "fetchFailIgnore": ".*",
     "configurations": {
       "chrome.laptop": {
         "target": "chrome.app",
