@@ -14,5 +14,9 @@
   "Пароль": "Password",
   "Счетчик": "Counter",
   "Форма авторизации": "Login form",
-  "Вы ввели неверный логин или пароль": "Uncorrect login or password"
+  "Вы ввели неверный логин или пароль": "Uncorrect login or password",
+  "Редактировать": "Edit",
+  "Отменить": "Cancel",
+  "Укажите валюту" : "Select currency",
+  "Укажите страну": "Select country"
 }
