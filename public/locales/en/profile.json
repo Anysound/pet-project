@@ -9,5 +9,10 @@
   "Имя пользователя": "Username",
   "Ссылка на аватар": "Link to avatar",
   "Город": "City",
-  "Аватар": "Avatar"
+  "Аватар": "Avatar",
+  "Ошибка на сервере": "Server error",
+  "Данные не указаны": "Data is required",
+  "Имя и фамилия обязательны": "Name and surname are required",
+  "Страна обязательна": "Country is required",
+  "Некорректный возраст": "Incorrect age"
 }
