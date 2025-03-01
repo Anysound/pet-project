@@ -8,12 +8,19 @@ export enum TextTheme {
   ERROR = 'error'
 }
 
+export const enum TextSize {
+  M = 'size_m',
+  L = 'size_l',
+  XL = 'size_xl'
+}
+
 interface TextProps {
 className?: string;
 title?: string;
 text?: string;
 theme?: TextTheme;
 align?: string;
+size?: TextSize
 }
 
 export enum TextAlign {
@@ -23,13 +30,14 @@ export enum TextAlign {
 }
 
 export const Text = memo(({
-  className, title, text, theme = TextTheme.PRIMARY, align = TextAlign.LEFT,
+  className, title, text, theme = TextTheme.PRIMARY, align = TextAlign.LEFT, size = TextSize.M,
 }: TextProps) => {
   const { t } = useTranslation();
 
   const mods: Mods = {
     [styles[theme]]: true,
     [styles[align]]: true,
+    [styles[size]]: true,
   };
 
   return (
