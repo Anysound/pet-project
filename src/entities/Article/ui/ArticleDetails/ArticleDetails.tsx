@@ -1,5 +1,5 @@
 /* eslint-disable i18next/no-literal-string */
-import { memo, useCallback, useEffect } from 'react';
+import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import CalendarIcon from 'shared/assets/icons/calendar.svg';
@@ -7,6 +7,7 @@ import EyeIcon from 'shared/assets/icons/eye.svg';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Icon } from 'shared/ui/Icon/Icon';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
@@ -40,11 +41,13 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
   const article = useSelector(getArticleDetailsData);
   const error = useSelector(getArticleDetailsError);
 
-  useEffect(() => {
-    if (__PROJECT__ !== 'storybook') {
-      dispatch(fetchArticleById(id));
-    }
-  }, [dispatch, id]);
+  // useEffect(() => {
+  //   if (__PROJECT__ !== 'storybook') {
+  //     dispatch(fetchArticleById(id));
+  //   }
+  // }, [dispatch, id]);
+
+  useInitialEffect(() => dispatch(fetchArticleById(id)));
 
   const renderBlock = useCallback((block: ArticleBlock) => {
     switch (block.type) {

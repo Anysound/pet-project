@@ -8,11 +8,11 @@ className?: string
 }
 
 const ArticlesPage = ({ className }: ArticlesPageProps) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('articles');
   return (
     // eslint-disable-next-line i18next/no-literal-string
     <div className={classNames(styles.ArticlesPage)}>
-      articles page
+      {t('Страница со статьями')}
     </div>
   );
 };
