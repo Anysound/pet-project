@@ -9,5 +9,28 @@ export default {
 
 const Template: ComponentStory<typeof CommentCard> = (args) => <CommentCard {...args} />;
 
-export const Primary = Template.bind({});
-Primary.args = {};
+export const Normal = Template.bind({});
+Normal.args = {
+  comment: {
+    id: '1',
+    text: 'hello world',
+    user: {
+      username: 'vasya',
+      id: '1',
+    },
+  },
+  isLoading: false,
+};
+
+export const IsLoading = Template.bind({});
+IsLoading.args = {
+  comment: {
+    id: '1',
+    text: 'hello world',
+    user: {
+      username: 'vasya',
+      id: '1',
+    },
+  },
+  isLoading: true,
+};

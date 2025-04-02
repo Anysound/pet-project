@@ -19,5 +19,7 @@
   "Редактировать": "Edit",
   "Отменить": "Cancel",
   "Укажите валюту" : "Select currency",
-  "Укажите страну": "Select country"
+  "Укажите страну": "Select country",
+  "Отправить": "Send",
+  "Введите текст комментария": "Enter comment"
 }
